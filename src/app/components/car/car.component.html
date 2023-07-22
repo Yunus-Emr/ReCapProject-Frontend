@@ -1,18 +1,20 @@
 <table class="table">
   <thead>
     <tr>
-      <th>carId</th>
-      <th>carName</th>
-      <th>colorName</th>
-      <th>colorName</th>
-      <th>dailyPrice</th>
+      <th scope="col">carId</th>
+      <th scope="col">carName</th>
+      <th scope="col">brandName</th>
+      <th scope="col">colorName</th>
+      <th scope="col">dailyPrice</th>
     </tr>
   </thead>
-  <tr *ngFor="let car of cars">
-    <td>{{ car.carId }}</td>
-    <td>{{ car.carName }}</td>
-    <td>{{ car.brandName }}</td>
-    <td>{{ car.colorName }}</td>
-    <td>{{ car.dailyPrice }}</td>
-  </tr>
+  <tbody class="table-group-divider">
+    <tr *ngFor="let car of cars" class="table-primary">
+      <td>{{ car.carId }}</td>
+      <td>{{ car.carName }}</td>
+      <td>{{ car.brandName }}</td>
+      <td>{{ car.colorName }}</td>
+      <td>{{ car.dailyPrice }}</td>
+    </tr>
+  </tbody>
 </table>
