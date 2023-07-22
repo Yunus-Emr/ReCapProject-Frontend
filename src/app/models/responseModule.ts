@@ -1,4 +1,4 @@
 export interface ResponseModule {
-  message: string;
   success: boolean;
+  message: string;
 }

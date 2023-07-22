@@ -8,7 +8,16 @@ import { ColorService } from 'src/app/services/color.service';
   styleUrls: ['./color.component.css'],
 })
 export class ColorComponent implements OnInit {
-  constructor() {}
+  colors: Color[] = [];
 
-  ngOnInit(): void {}
+  constructor(private colorService: ColorService) {}
+
+  ngOnInit(): void {
+    this.getColors();
+  }
+  getColors() {
+    this.colorService.getColors().subscribe((response) => {
+      this.colors = response.data;
+    });
+  }
 }

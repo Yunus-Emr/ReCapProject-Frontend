@@ -8,7 +8,17 @@ import { CustomerService } from 'src/app/services/customer.service';
   styleUrls: ['./customer.component.css'],
 })
 export class CustomerComponent {
-  constructor() {}
+  customers: Customer[] = [];
 
-  ngOnInit(): void {}
+  constructor(private customerService: CustomerService) {}
+
+  ngOnInit(): void {
+    this.getCustomer();
+  }
+
+  getCustomer() {
+    this.customerService.getCustomers().subscribe((response) => {
+      this.customers = response.data;
+    });
+  }
 }
