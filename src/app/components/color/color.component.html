@@ -5,8 +5,10 @@
       <th>ColorName</th>
     </tr>
   </thead>
-  <tr *ngFor="let color of colors">
-    <td>{{ color.colorId }}</td>
-    <td>{{ color.colorName }}</td>
-  </tr>
+  <tbody class="table-group-divider">
+    <tr *ngFor="let color of colors" class="table-primary">
+      <td>{{ color.colorId }}</td>
+      <td>{{ color.colorName }}</td>
+    </tr>
+  </tbody>
 </table>

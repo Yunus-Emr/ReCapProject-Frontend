@@ -5,8 +5,10 @@
       <th>companyName</th>
     </tr>
   </thead>
-  <tr *ngFor="let customer of customers">
-    <td>{{ customer.customerId }}</td>
-    <td>{{ customer.companyName }}</td>
-  </tr>
+  <tbody class="table-group-divider">
+    <tr *ngFor="let customer of customers" class="table-primary">
+      <td>{{ customer.customerId }}</td>
+      <td>{{ customer.companyName }}</td>
+    </tr>
+  </tbody>
 </table>

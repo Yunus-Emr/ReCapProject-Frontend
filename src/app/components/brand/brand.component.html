@@ -5,8 +5,10 @@
       <th>brandName</th>
     </tr>
   </thead>
-  <tr *ngFor="let brand of brands">
-    <td>{{ brand.brandId }}</td>
-    <td>{{ brand.brandName }}</td>
-  </tr>
+  <tbody class="table-group-divider">
+    <tr *ngFor="let brand of brands" class="table-primary">
+      <td>{{ brand.brandId }}</td>
+      <td>{{ brand.brandName }}</td>
+    </tr>
+  </tbody>
 </table>
