@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { CustomerResponseModule } from '../models/customerResponseModule';
+import { Customer } from '../models/customer';
+import { ListResponseModule } from '../models/listResponseModule';
 
 @Injectable({
   providedIn: 'root',
@@ -11,7 +12,7 @@ export class CustomerService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getCustomers(): Observable<CustomerResponseModule> {
-    return this.httpClient.get<CustomerResponseModule>(this.apiUrl);
+  getCustomers(): Observable<ListResponseModule<Customer>> {
+    return this.httpClient.get<ListResponseModule<Customer>>(this.apiUrl);
   }
 }

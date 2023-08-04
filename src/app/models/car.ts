@@ -4,4 +4,5 @@ export interface Car {
   colorName: string;
   brandName: string;
   dailyPrice: number;
+  carImage: string;
 }
