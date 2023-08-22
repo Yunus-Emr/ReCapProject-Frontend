@@ -1,8 +1,8 @@
-export interface Car {
+export interface CarDetail {
   carId: number;
   carName: string;
-  colorId: number;
-  brandId: number;
+  colorName: string;
+  brandName: string;
   dailyPrice: number;
   carImage: string;
   description: string;

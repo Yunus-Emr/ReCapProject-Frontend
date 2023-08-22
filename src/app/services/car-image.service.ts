@@ -10,10 +10,14 @@ import { CarImage } from '../models/carImage';
 export class CarImageService {
   apiUrl = 'https://localhost:7233/api/';
 
-  constructor(private httpclient: HttpClient) {}
+  constructor(private httpClient: HttpClient) {}
 
   getCarImages(): Observable<ListResponseModule<CarImage>> {
     let newPath = this.apiUrl + 'carImages/getall';
-    return this.httpclient.get<ListResponseModule<CarImage>>(newPath);
+    return this.httpClient.get<ListResponseModule<CarImage>>(newPath);
+  }
+  getCarImagesByCar(carId: number): Observable<ListResponseModule<CarImage>> {
+    let newPath = this.apiUrl + 'carImages/getimagebycarId?carid=' + carId;
+    return this.httpClient.get<ListResponseModule<CarImage>>(newPath);
   }
 }

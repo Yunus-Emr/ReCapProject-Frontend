@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Car } from 'src/app/models/car';
+import { CarDetail } from 'src/app/models/carDetail';
 import { CarService } from 'src/app/services/car.service';
 
 @Component({
@@ -9,9 +9,9 @@ import { CarService } from 'src/app/services/car.service';
   styleUrls: ['./car.component.css'],
 })
 export class CarComponent implements OnInit {
-  cars: Car[] = [];
+  carDetails: CarDetail[] = [];
   baseUrl: string = 'https://localhost:7233/files/';
-  IsCollapsed: boolean = true;
+  filterText = '';
 
   constructor(
     private carService: CarService,
@@ -30,22 +30,19 @@ export class CarComponent implements OnInit {
     });
   }
 
-  toggleCollapse() {
-    this.IsCollapsed = !this.IsCollapsed;
-  }
   getCars() {
     this.carService.getCars().subscribe((response) => {
-      this.cars = response.data;
+      this.carDetails = response.data;
     });
   }
   getCarsByBrand(brandId: number) {
     this.carService.getCarsDetailByBrand(brandId).subscribe((response) => {
-      this.cars = response.data;
+      this.carDetails = response.data;
     });
   }
   getCarsByColor(colorId: number) {
     this.carService.getCarsDetailByColor(colorId).subscribe((response) => {
-      this.cars = response.data;
+      this.carDetails = response.data;
     });
   }
   getCarImageUrl(imagePath: string): string {
